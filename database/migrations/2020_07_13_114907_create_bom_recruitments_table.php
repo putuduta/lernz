@@ -16,6 +16,7 @@ class CreateBomRecruitmentsTable extends Migration
         Schema::create('bom_recruitments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('buept_score');
+            $table->string('buept_score_proof');
             $table->string('division_preference1');
             $table->string('division_preference1_reason');
             $table->string('division_preference2');

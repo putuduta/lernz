@@ -14,6 +14,14 @@
                     <label for="buept_score" class="col-form-label
                         formright">{{ _('BUEPT Score:') }}</label>
                     <p><input type="text" id="buept_score" name="buept_score" class="form-control" required></p>
+                    <label for="buept_score_proof" class="col-form-label
+                        formright">{{ _('BUEPT Score Proof:') }}</label>
+                    <div class="custom-file">
+                        <input type="file" id="buept_score_proof" name="buept_score_proof"
+                                        class="custom-file-input form-control"
+                                        value="{{ old('buept_score_proof') }}">
+                        <label class="trans-cst custom-file-label overflow-hidden" for="buept_score_proof">Choose file</label>
+                    </div>
                 </div>
                 <div class="tab">
                     <label for="division_preference1" class="col-form-label
@@ -124,6 +132,8 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+
 </script>
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bom_recruitment;
+use Illuminate\Support\Facades\Storage;
 
 class BomRecruitmentController extends Controller
 {
@@ -23,6 +24,7 @@ class BomRecruitmentController extends Controller
     {
         $this->validate($request, [
             'buept_score' => 'required|numeric',
+            'buept_score_proof' => 'required|image|max:1999|mimes:jpg,png,jpeg',
             'division_preference1' => 'required|string',
             'division_preference1_reason' => 'required|string',
             'division_preference2' => 'required|string',
@@ -31,9 +33,18 @@ class BomRecruitmentController extends Controller
             'division_preference3_reason' => 'required|string',
         ]);
 
+        if ($request->hasFile('buept_score_proof')) {
+            $extension = $request->file('buept_score_proof')->getClientOriginalExtension();
+            $file_name = $request->name . '_' . $extension;
+            $path = $request->file('buept_score_proof')->storeAs('/public/registration', $file_name);
+        } else {
+            $file_name = NULL;
+        }
+
         $bom_recruitments = new Bom_recruitment;
         // $bom_recruitments->user_id = auth()->user()->id;
         $bom_recruitments->buept_score = $request->input('buept_score');
+        $bom_recruitments->buept_score_proof = $file_name;
         $bom_recruitments->division_preference1 = $request->input('division_preference1');
         $bom_recruitments->division_preference1_reason = $request->input('division_preference1_reason');
         $bom_recruitments->division_preference2 = $request->input('division_preference2');
