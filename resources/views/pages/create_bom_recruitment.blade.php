@@ -85,10 +85,14 @@
                     <p><textarea id="division_preference3_reason" name="division_preference3_reason" class="form-control" required> </textarea></p>
                 </div>
             </div>
-            <div class="form-group" style="overflow:auto;">
-                <div style="float:right;">
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <div class="form-group pr-3 pt-3 pl-3" style="overflow:auto;">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button class="btn-lg btn-block mr-5" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn-lg btn-block mr-5" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
                 </div>
             </div>
             <!-- Circles which indicates the steps of the form: -->

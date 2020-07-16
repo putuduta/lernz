@@ -13,6 +13,10 @@ body {
 h1 {
     text-align: center;
 }
+.card-header {
+    background-color: #1db9a1;
+    color: #ffffff;
+}
 
 input {
     padding: 10px;
@@ -32,12 +36,11 @@ input.invalid {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #1db9a1;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
     font-size: 17px;
-    font-family: Raleway;
     cursor: pointer;
 }
 
