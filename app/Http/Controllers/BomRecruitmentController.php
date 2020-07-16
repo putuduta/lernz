@@ -35,7 +35,7 @@ class BomRecruitmentController extends Controller
 
         if ($request->hasFile('buept_score_proof')) {
             $extension = $request->file('buept_score_proof')->getClientOriginalExtension();
-            $file_name = $request->name . '_' . $extension;
+            $file_name = $request->name . '.' . $extension;
             $path = $request->file('buept_score_proof')->storeAs('/public/registration', $file_name);
         } else {
             $file_name = NULL;

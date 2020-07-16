@@ -10,11 +10,8 @@
                             <th scope="col" class="align-middle text-center">ID</th>
                             <th scope="col" class="align-middle text-center">NIM</th>
                             <th scope="col" class="align-middle text-center">Name</th>
-                            <th scope="col" class="align-middle text-center">Major</th>
-                            <th scope="col" class="align-middle text-center">Email</th>
-                            <th scope="col" class="align-middle text-center">Phone Number</th>
-                            <th scope="col" class="align-middle text-center">Line ID</th>
-                            <th scope="col" class="align-middle text-center" colspan="2">Action</th>
+                            <th scope="col" class="align-middle text-center">BUEPT Score</th>
+                            <th scope="col" class="align-middle text-center" colspan="3">Action</th>
                         </thead>
                         <tbody>
                             @foreach ($bom_recruitment as $bom_recruitments)
@@ -22,10 +19,10 @@
                                     <td class="align-middle text-center"></td>
                                     <td class="align-middle text-center"></td>
                                     <td class="align-middle text-center"></td>
-                                    <td class="align-middle text-center"></td>
-                                    <td class="align-middle text-center"></td>
-                                    <td class="align-middle text-center"></td>
-                                    <td class="align-middle text-center"></td>
+                                    <td class="align-middle text-center">{{ $bom_recruitments->buept_score }}</td>
+                                    <td class="align-middle text-center">
+                                       <a class="btn btn-block" href="/storage/img/{{ $bom_recruitments->buept_score_proof }}"><i  class="fa fa-eye fa-2x"></i></a>
+                                    </td>
                                     <td class="align-middle text-center">
                                         <i type="button" data-toggle="modal"data-target="#exampleModalCenter" class="fas fa-address-card fa-2x"></i>
                                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -63,7 +60,7 @@
                                         <form method="POST" action="{{ action('BomRecruitmentController@delete', $bom_recruitments->id) }}">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button class="btn btn-sm btn-block btn-dark text-white" type="submit">D</button>
+                                            <button  class="btn btn-block btn-danger text-white" type="submit">D</button>
                                         </form>
                                     </td>
                                 </tr>
