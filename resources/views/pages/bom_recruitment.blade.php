@@ -27,7 +27,7 @@
                                     <td class="align-middle text-center"></td>
                                     <td class="align-middle text-center"></td>
                                     <td class="align-middle text-center">
-                                        <i type="button" data-toggle="modal"data-target="#exampleModalCenter" class="fas fa-money-check-alt fa-2x"></i>
+                                        <i type="button" data-toggle="modal"data-target="#exampleModalCenter" class="fas fa-address-card fa-2x"></i>
                                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
@@ -38,13 +38,19 @@
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body mo-res">
-                                                        <p>1st division preference: <span> {{ $bom_recruitments->division_preference1}}</span></p>
-                                                        <p> Reason(s): <span> {{ $bom_recruitments->division_preference1_reason }}</span></p>
-                                                        <p>2nd division preference: <span> {{ $bom_recruitments->division_preference2}}</span></p>
-                                                        <p> Reason(s): <span> {{ $bom_recruitments->division_preference2_reason }}</span></p>
-                                                        <p>3rd division preference: <span> {{ $bom_recruitments->division_preference3}}</span></p>
-                                                        <p> Reason(s): <span> {{ $bom_recruitments->division_preference3_reason }}</span></p>
+                                                    <div class="modal-body mo-res text-left">
+                                                        <p>1st division preference: </p>
+                                                        <p> {{ $bom_recruitments->division_preference1}}</p>
+                                                        <p> Reason(s): </p>
+                                                        <p> {{ $bom_recruitments->division_preference1_reason }}</p>
+                                                        <p>2nd division preference: </p>
+                                                        <p> {{ $bom_recruitments->division_preference2}}</p>
+                                                        <p> Reason(s): </p>
+                                                        <p> {{ $bom_recruitments->division_preference2_reason }}</p>
+                                                        <p>3rd division preference: </p>
+                                                        <p> {{ $bom_recruitments->division_preference3}}</p>
+                                                        <p> Reason(s): </p>
+                                                        <p> {{ $bom_recruitments->division_preference3_reason }}</p>
                                                     </div>
                                                 </div>
                                             </div>
