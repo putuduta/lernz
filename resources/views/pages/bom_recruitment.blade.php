@@ -43,14 +43,17 @@
                                                         <p> {{ $bom_recruitments->division_preference1}}</p>
                                                         <p> Reason(s): </p>
                                                         <p> {{ $bom_recruitments->division_preference1_reason }}</p>
+                                                        <hr>
                                                         <p>2nd division preference: </p>
                                                         <p> {{ $bom_recruitments->division_preference2}}</p>
                                                         <p> Reason(s): </p>
                                                         <p> {{ $bom_recruitments->division_preference2_reason }}</p>
+                                                        <hr>
                                                         <p>3rd division preference: </p>
                                                         <p> {{ $bom_recruitments->division_preference3}}</p>
                                                         <p> Reason(s): </p>
                                                         <p> {{ $bom_recruitments->division_preference3_reason }}</p>
+                                                        <hr>
                                                     </div>
                                                 </div>
                                             </div>
