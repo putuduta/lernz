@@ -77,19 +77,46 @@
                 <div class="tab">
                     <label for="division_preference1" class="col-form-label
                             formright">{{ _('1st division preference:') }}</label>
-                    <p><input type="text" id="division_preference1" name="division_preference1" class="form-control" required></p>
+                    <p>
+                        <div>
+                            <select name="division_preference1" id="division_preference1" class="form-control">
+                                <option selected value="">Choose...</option>
+                                @foreach ($division_list as $division_lists)
+                                    <option value="{{ $division_lists->name }}">{{ $division_lists->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </p>
                     <label for="division_preference1_reason" class="col-form-label
                                         formright">{{ _('Please state your reason(s):') }}</label>
                     <p><textarea id="division_preference1_reason" name="division_preference1_reason" class="form-control" required> </textarea></p>
                     <label for="division_preference2" class="col-form-label
                             formright">{{ _('2nd division preference:') }}</label>
-                    <p><input type="text" id="division_preference2" name="division_preference2" class="form-control" required></p>
+                    <p>
+                        <div>
+                            <select name="division_preference2" id="division_preference2" class="form-control">
+                                <option selected value="">Choose...</option>
+                                @foreach ($division_list as $division_lists)
+                                    <option value="{{ $division_lists->name }}">{{ $division_lists->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </p>
                     <label for="division_preference2_reason" class="col-form-label
                                         formright">{{ _('Please state your reason(s):') }}</label>
                     <p><textarea id="division_preference2_reason" name="division_preference2_reason" class="form-control" required> </textarea></p>
                     <label for="division_preference3" class="col-form-label
                             formright">{{ _('3rd division preference:') }}</label>
-                    <p><input type="text" id="division_preference3" name="division_preference3" class="form-control" required></p>
+                    <p>
+                        <div>
+                            <select name="division_preference3" id="division_preference3" class="form-control">
+                                <option selected value="">Choose...</option>
+                                @foreach ($division_list as $division_lists)
+                                    <option value="{{ $division_lists->name }}">{{ $division_lists->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </p>
                     <label for="division_preference3_reason" class="col-form-label
                                         formright">{{ _('Please state your reason(s):') }}</label>
                     <p><textarea id="division_preference3_reason" name="division_preference3_reason" class="form-control" required> </textarea></p>

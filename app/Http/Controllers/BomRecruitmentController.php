@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bom_recruitment;
+use App\Division_list;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
+use lluminate\Validation\Validator;
 
 class BomRecruitmentController extends Controller
 {
@@ -17,7 +20,8 @@ class BomRecruitmentController extends Controller
 
     public function showCreate()
     {
-        return view('pages.create_bom_recruitment');
+        $division_list = Division_list::all();
+        return view('pages.create_bom_recruitment', compact('division_list'));
     }
 
     public function create(Request $request)
@@ -25,11 +29,23 @@ class BomRecruitmentController extends Controller
         $this->validate($request, [
             'buept_score' => 'required|numeric',
             'buept_score_proof' => 'required|image|max:1999|mimes:jpg,png,jpeg',
-            'division_preference1' => 'required|string',
+            'division_preference1' =>
+            [
+                'required','string',
+                Rule::notIn([$request->division_preference2, $request->division_preference3]),
+            ],
             'division_preference1_reason' => 'required|string',
-            'division_preference2' => 'required|string',
+            'division_preference2' =>
+            [
+                'required', 'string',
+                Rule::notIn([$request->division_preference1, $request->division_preference3]),
+            ],
             'division_preference2_reason' => 'required|string',
-            'division_preference3' => 'required|string',
+            'division_preference3' =>
+            [
+                'required', 'string',
+                Rule::notIn([$request->division_preference1, $request->division_preference2]),
+            ],
             'division_preference3_reason' => 'required|string',
         ]);
 
