@@ -2,6 +2,84 @@
 
 @section('content')
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+#regForm {
+    background-color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+}
+.card-header {
+    background-color: #1db9a1;
+    color: #ffffff;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+button {
+    background-color: #1db9a1;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#prevBtn {
+    background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #4CAF50;
+}
+
+</style>
+
 <div class="container mt-5 py-5">
     <div class="card border-0 mb-2">
             <form id="regForm" method="POST" action="{{ action('BomRecruitmentController@create') }}"

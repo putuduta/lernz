@@ -54,6 +54,11 @@ Route::get('/bom_recruitment-create', 'BomRecruitmentController@showCreate')->na
 Route::post('/bom_recruitment-create/post', 'BomRecruitmentController@create')->name('bom_recruitment_create');
 Route::delete('/bom_recruitment/{id}', 'BomRecruitmentController@delete')->name('bom_recruitment_delete');
 
+
+Route::get('/welcome-party-shift', 'WelcomePartyShiftController@create');
+Route::get('/welcome-party-edit', 'WelcomePartyShiftController@edit');
+Route::get('/welcome-party-details', 'WelcomePartyShiftController@show');
+Route::get('/welcome-party-attendance', 'WelcomePartyShiftController@show_absence');
 //get
 //post -> bikin data bary
 //put ->update
